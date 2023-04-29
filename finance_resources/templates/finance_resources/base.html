@@ -13,6 +13,32 @@
 
     </head>
     <body>
-        {% block content %}{% endblock %}
+        <div class="row">
+            <div class="col-sm-4" style="background-color: #99cb41;">
+                <div style="text-align: right;"><img src="{% static 'logo.png' %}" width="150" height="69" /></div>
+            </div>
+            <div class="col-sm-4" style="background-color: #99cb41;">
+                <div style="text-align: center;">
+                    <h1>MONEY MATCH</h1>
+                </div>
+            </div>
+            <div class="col-sm-4" style="background-color: #99cb41;">
+                <div style="text-align: left;"><img src="{% static 'logo.png' %}" width="150" height="69" /></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-light" style="background-color: #157b62;">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand">Money Match</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li class="active"><a href="{% url 'find_matches' %}">Find Matches</a></li>
+                <li class="active"><a href="{% url 'all_resources' %}">All Resources</a></li>
+                <li class="active"><a href="{% url 'discussion_forum' %}">Discussion Forum</a></li>
+              </ul>
+            </div>
+          </nav>
+          {% block content %}{% endblock %}
     </body>
 </html>
