@@ -13,7 +13,8 @@ def all_resources(response):
     return render(response, "finance_resources/all_resources.html", {"resources": resources})
 
 def discussion_forum(response):
-    return render(response, "finance_resources/discussion_forum.html")
+    posts = Post.objects.all()
+    return render(response, "finance_resources/discussion_forum.html", {"posts": posts})
 
 def newPost(response):
     if response.method == "POST":
