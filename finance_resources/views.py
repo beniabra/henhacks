@@ -31,3 +31,31 @@ def likePost(response, id):
     p.likes += 1
     p.save()
     return redirect(discussion_forum)
+
+def results(response):
+    if response.method == "POST":
+        print(response.POST)
+        valid = False
+        category = ''
+        if response.POST.get('name'):
+            name = response.POST.get('name')
+        if response.POST.get('age'):
+            elderly = int(response.POST.get('age')) >= 65
+        if response.POST.get('income'):
+            if response.POST.get('income') == '...': 
+                valid = True
+            else: 
+                if response.POST.get('income') == 'less' or response.POST.get('income') == 'middle':
+                    valid = True
+                else:
+                    valid = False
+        if response.POST.get('category'):
+            category = response.POST.get('category')
+    resources = []
+    if valid:
+        all_resources = Resource.objects.all()
+        resources = all_resources.filter(categories__icontains=category)
+        if not elderly:
+            resources = resources.exclude(categories__icontains="elderly")
+     
+    return render(response, "finance_resources/results.html", {"valid": valid, "resources": resources} )

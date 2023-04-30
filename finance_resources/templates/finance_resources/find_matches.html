@@ -1,33 +1,37 @@
 {% extends 'finance_resources/base.html' %}
+{% load static %}
 
 {% block title %}Find Matches{% endblock %}
 
 {% block content %}
     <div class="container">
         <h2><b>Find Your Match</b></h2>
+        <form method="post" action="results">
+        {% csrf_token %}
         <div class="form-group">
             <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="usr">
+            <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="form-group">
             <label for="usr">Age:</label>
-            <input type="text" class="form-control" id="usr">
+            <input type="text" class="form-control" id="age" name="age" required>
         </div>
         <div class="form-group">
-            <label for="usr">County:</label>
-            <select id="status" class="form-control" name="status">
-                <option>Delaware</option>
+            <label for="county">County:</label>
+            <select id="county" class="form-control" name="county">
+                <option>...</option>
                 <option>New Castle</option>
                 <option>Kent</option>
                 <option>Sussex</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="usr">Yearly Income Range:</label>
-            <select id="status" class="form-control" name="status">
-                <option>Less than $25,000</option>
-                <option>$25,000 to $50,000</option>
-                <option>More than $50,000</option>
+            <label for="income">Yearly Income Range:</label>
+            <select id="income" class="form-control" name="income">
+                <option>...</option>
+                <option value="less">Less than $25,000</option>
+                <option value="middle">$25,000 to $50,000</option>
+                <option value="more">More than $50,000</option>
             </select>
         </div>
         <div class="form-group">
@@ -35,38 +39,40 @@
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-2">
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Food</label>
+                    <div class="radio">
+                        <label><input type="radio" value="food" name="category" required>Food</label>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Healthcare</label>
+                    <div class="radio">
+                        <label><input type="radio" value="healthcare" name="category">Healthcare</label>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Elderly</label>
+                    <div class="radio">
+                        <label><input type="radio" value="elderly" name="category">Elderly Care</label>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Emergency Money</label>
+                    <div class="radio">
+                        <label><input type="radio" value="emergency" name="category">Emergency Money</label>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Housing</label>
+                    <div class="radio">
+                        <label><input type="radio" value="housing" name="category">Housing/Rent</label>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Employment</label>
+                    <div class="radio">
+                        <label><input type="radio" value="employment" name="category">Employment</label>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Utility Bills</label>
+                    <div class="radio">
+                        <label><input type="radio" value="utilities" name="category">Utility Bills</label>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="">Education</label>
+                    <div class="radio">
+                        <label><input type="radio" value="education" name="category">Education</label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-11"></div>
-                <button class="btn btn-primary" type="button">Submit</button>
+                <button type="submit" name="submit" class="btn btn-default">Submit</button>
             </div>
         </div>
+        </form>
         <br>
+    
     </div>
 {% endblock %}
