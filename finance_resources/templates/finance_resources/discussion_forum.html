@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="container">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPost">Add New Post</button>
+    <button style="color: #fbfbf3; background-color: #157b62" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPost">Add New Post</button>
     <div id="newPost" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -18,11 +18,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="comment">Comment:</label>
-                        <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                        <textarea class="form-control" rows="5" id="comment" name="comment" required></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -34,7 +34,7 @@
         </div>
     </div>
     {% for post in posts %}
-    <div class="container" style="background-color: #b9d2b7; margin-top: 20px; padding: 10px; border-style: solid; border-width: 2px; border-color: gray">
+    <div class="container" style="background-color: #cae8d9; margin-top: 20px; padding: 10px">
         <div class="col-sm-1">
             <img src="{% static 'profile.jpg' %}" width="60" height="60" />
         </div>
