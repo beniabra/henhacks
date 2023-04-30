@@ -2,4 +2,71 @@
 
 {% block title %}Find Matches{% endblock %}
 
-{% block content %}Find Matches{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2><b>Find Your Match</b></h2>
+        <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+            <label for="usr">Age:</label>
+            <input type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+            <label for="usr">County:</label>
+            <select id="status" class="form-control" name="status">
+                <option>Delaware</option>
+                <option>New Castle</option>
+                <option>Kent</option>
+                <option>Sussex</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="usr">Yearly Income Range:</label>
+            <select id="status" class="form-control" name="status">
+                <option>Less than $25,000</option>
+                <option>$25,000 to $50,000</option>
+                <option>More than $50,000</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="usr">Assistance Type:</label>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Food</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Healthcare</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Elderly</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Emergency Money</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Housing</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Employment</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Utility Bills</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Education</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-11"></div>
+                <button class="btn btn-primary" type="button">Submit</button>
+            </div>
+        </div>
+        <br>
+    </div>
+{% endblock %}
