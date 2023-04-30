@@ -11,6 +11,9 @@
                     <h4>{{resource.title}}</h4>
                     <h4><small>{{resource.contact_num}}</small></h4>
                     <p>{{resource.description}}</p>
+                    {% if resource.contact_urls %}
+                    <p>For more info: <a href="{{ resource.contact_url }}">{{resource.contact_urls}}</a></p>
+                    {% endif %}
                 </div>
                 <div class="col-sm-2">
                     <h4 class="pull-right"><small>{{resource.get_county_display}}</small></h4>
