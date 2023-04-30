@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Resource
+from django.shortcuts import render, redirect
+from .models import Resource, Post
 from django.http import HttpResponse
 
 def home(response):
@@ -14,3 +14,19 @@ def all_resources(response):
 
 def discussion_forum(response):
     return render(response, "finance_resources/discussion_forum.html")
+
+def newPost(response):
+    if response.method == "POST":
+        if response.POST.get("name"):
+            person = response.POST.get('name')
+        if response.POST.get('comment'):
+            comment = response.POST.get('comment')
+        p = Post.objects.create(name=person, description=comment)
+        p.save()
+    return redirect(discussion_forum)
+
+def likePost(response, id):
+    p = Post.objects.get(id=id)
+    p.likes += 1
+    p.save()
+    return redirect(discussion_forum)
