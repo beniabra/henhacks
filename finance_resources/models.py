@@ -22,6 +22,7 @@ class Post(models.Model):
     name=models.CharField(max_length=100,default="anonymous")
     description=models.CharField(max_length=1000)
     date_created=models.DateTimeField(auto_now_add=True, null=True)
+    likes=models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ['date_created']

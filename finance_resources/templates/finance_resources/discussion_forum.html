@@ -42,6 +42,14 @@
             <h4>{{ post.name }}</h4>
             <h4><small>{{ post.date_created|date:"m/d/Y g:iA" }}</small></h4>
             <p>{{ post.description }}</p>
+            <span class="pull-right" style="margin-left: 5px">{{ post.likes }}</span>
+            <a class="pull-right" href="{% url 'likePost' post.id %}">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </a>
+            <br>
+            <div style="margin-top: 5px" class="form-group">
+                <textarea class="form-control" rows="2" id="reply" placeholder="Reply to above comment..."></textarea>
+              </div>
         </div> 
     </div>
     {% endfor %}

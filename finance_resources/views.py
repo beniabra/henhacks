@@ -25,3 +25,9 @@ def newPost(response):
         p = Post.objects.create(name=person, description=comment)
         p.save()
     return redirect(discussion_forum)
+
+def likePost(response, id):
+    p = Post.objects.get(id=id)
+    p.likes += 1
+    p.save()
+    return redirect(discussion_forum)
