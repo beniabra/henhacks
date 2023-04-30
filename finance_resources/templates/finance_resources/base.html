@@ -14,28 +14,22 @@
     </head>
     <body>
         <div class="row">
-            <div class="col-sm-4" style="background-color: #99cb41;">
-                <div style="text-align: right;"><img src="{% static 'logo.png' %}" width="150" height="69" /></div>
+            <div class="col-sm-1" style="background-color: #fafff7;">
+                <div style="text-align: right; padding: 5px"><img src="{% static 'logo.png' %}" width="100" height="75" /></div>
             </div>
-            <div class="col-sm-4" style="background-color: #99cb41;">
-                <div style="text-align: center;">
-                    <h1>MONEY MATCH</h1>
+            <div class="col-sm-11" style="background-color: #fafff7;">
+                <div style="text-align: left;">
+                    <h1 style="font-weight: 900; color: #157b62">MONEY MATCH</h1>
                 </div>
-            </div>
-            <div class="col-sm-4" style="background-color: #99cb41;">
-                <div style="text-align: left;"><img src="{% static 'logo.png' %}" width="150" height="69" /></div>
             </div>
         </div>
         <nav class="navbar navbar-light" style="background-color: #157b62;">
             <div class="container-fluid">
-              <div class="navbar-header">
-                <a class="navbar-brand">Money Match</a>
-              </div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                <li class="active"><a href="{% url 'find_matches' %}">Find Matches</a></li>
-                <li class="active"><a href="{% url 'all_resources' %}">All Resources</a></li>
-                <li class="active"><a href="{% url 'discussion_forum' %}">Discussion Forum</a></li>
+                <li class="active"><a href="{% url 'home' %}" style="color: #fbfbf3">Home</a></li>
+                <li class="active"><a href="{% url 'find_matches' %}" style="color: #fbfbf3">Find Matches</a></li>
+                <li class="active"><a href="{% url 'all_resources' %}" style="color: #fbfbf3">All Resources</a></li>
+                <li class="active"><a href="{% url 'discussion_forum' %}" style="color: #fbfbf3">Discussion Forum</a></li>
               </ul>
             </div>
           </nav>
