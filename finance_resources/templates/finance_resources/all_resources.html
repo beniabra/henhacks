@@ -2,4 +2,21 @@
 
 {% block title %}All Resources{% endblock %}
 
-{% block content %}All Resources{% endblock %}
+{% block content %}
+    {% for resource in resources %}
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-sm-10">
+                    <h4>{{resource.title}}</h4>
+                    <h4><small>{{resource.contact_num}}</small></h4>
+                    <p>{{resource.description}}</p>
+                </div>
+                <div class="col-sm-2">
+                    <h4 class="pull-right"><small>{{resource.get_county_display}}</small></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
